@@ -1,4 +1,4 @@
-#Utils Magic
+# Utils Magic
 
 Android Utilities Library build in kotlin Provide user 100 of pre defined method to create advanced native android app.
 
