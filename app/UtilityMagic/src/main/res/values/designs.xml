@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Regular">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="BoldWithItalic">
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <style name="NormalWithItalic">
+        <item name="android:textStyle">normal|italic</item>
+    </style>
+
+</resources>
