@@ -18,7 +18,7 @@ Android Utilities Library build in kotlin Provide user 100 of pre defined method
  
  ```
  dependencies {
-	        implementation 'com.github.Shahidzbi4213:Magic-Utils:1.0.0'
+	         implementation 'com.github.Shahidzbi4213:Utils-Magic:1.0.0'
 	}
   ```
  
