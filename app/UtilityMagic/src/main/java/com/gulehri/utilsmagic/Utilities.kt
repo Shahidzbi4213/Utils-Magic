@@ -535,11 +535,14 @@ class Utilities() {
             fontSize: Float? = null,
             textColor: String? = null,
             position: Int? = null,
-            fontStyle: Int? = null,
             fontFamily: Int? = null,
             elevation: Float? = null,
-            context: Context? = null
-
+            context: Context? = null,
+            isRegular: Boolean = false,
+            isBold: Boolean = false,
+            isItalic: Boolean = false,
+            isBoldItalic: Boolean = false,
+            isRegularItalic: Boolean = false
         ) {
             view?.let { it ->
 
@@ -562,9 +565,24 @@ class Utilities() {
 
                 }
 
-                fontStyle?.let { style ->
-                    if (it is EditText) it.setTextAppearance(style)
-                    if (it is TextView) it.setTextAppearance(style)
+                if (it is TextView) {
+                    when {
+                        isRegular -> it.setTextAppearance(com.gulehri.utilsmagic.R.style.Regular)
+                        isBold -> it.setTextAppearance(com.gulehri.utilsmagic.R.style.Bold)
+                        isItalic -> it.setTextAppearance(com.gulehri.utilsmagic.R.style.Italic)
+                        isBoldItalic -> it.setTextAppearance(com.gulehri.utilsmagic.R.style.BoldWithItalic)
+                        isRegularItalic -> it.setTextAppearance(com.gulehri.utilsmagic.R.style.NormalWithItalic)
+                    }
+
+                }
+                if (it is EditText) {
+                    when {
+                        isRegular -> it.setTextAppearance(com.gulehri.utilsmagic.R.style.Regular)
+                        isBold -> it.setTextAppearance(com.gulehri.utilsmagic.R.style.Bold)
+                        isItalic -> it.setTextAppearance(com.gulehri.utilsmagic.R.style.Italic)
+                        isBoldItalic -> it.setTextAppearance(com.gulehri.utilsmagic.R.style.BoldWithItalic)
+                        isRegularItalic -> it.setTextAppearance(com.gulehri.utilsmagic.R.style.NormalWithItalic)
+                    }
                 }
 
                 fontFamily?.let { family ->
@@ -584,8 +602,13 @@ class Utilities() {
             fontWeight: Int? = null,
             rounded: Boolean = false,
             elevation: Float? = null,
+            isRegular: Boolean = false,
+            isBold: Boolean = false,
+            isItalic: Boolean = false,
+            isBoldItalic: Boolean = false,
+            isRegularItalic: Boolean = false
 
-            ) {
+        ) {
             view?.let { button ->
 
                 elevation?.let { button.elevation = it }
@@ -612,8 +635,16 @@ class Utilities() {
 
                 if (rounded)
                     button.background = ContextCompat.getDrawable(
-                        context,com.gulehri.utilsmagic.R.drawable.round_view
+                        context, com.gulehri.utilsmagic.R.drawable.round_view
                     )
+
+                when {
+                    isRegular -> button.setTextAppearance(com.gulehri.utilsmagic.R.style.Regular)
+                    isBold -> button.setTextAppearance(com.gulehri.utilsmagic.R.style.Bold)
+                    isItalic -> button.setTextAppearance(com.gulehri.utilsmagic.R.style.Italic)
+                    isBoldItalic -> button.setTextAppearance(com.gulehri.utilsmagic.R.style.BoldWithItalic)
+                    isRegularItalic -> button.setTextAppearance(com.gulehri.utilsmagic.R.style.NormalWithItalic)
+                }
 
             }
         }
