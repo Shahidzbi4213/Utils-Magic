@@ -1,4 +1,4 @@
-package com.gulehri.magicutils
+package com.gulehri.utilsmagic
 
 import android.R
 import android.annotation.SuppressLint
@@ -19,6 +19,7 @@ import android.location.Geocoder
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.net.Uri
+import android.os.Build
 import android.os.Environment
 import android.provider.DocumentsContract
 import android.provider.MediaStore
@@ -33,6 +34,7 @@ import android.view.ViewTreeObserver
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.webkit.MimeTypeMap
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
@@ -59,6 +61,7 @@ class Utilities() {
 
     /*Internet Checking Block*/
     object Internet {
+        @RequiresApi(Build.VERSION_CODES.M)
         fun isConnected(context: Context): Boolean {
             val connectivityManager =
                 context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -432,6 +435,7 @@ class Utilities() {
     /*This Block Provide Date Picker Dialog and set Date to field*/
     object DateDialog {
 
+        @RequiresApi(Build.VERSION_CODES.O)
         fun datePicker(context: Context, view: View?, date: String?): DatePickerDialog {
             val listener =
                 DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
@@ -530,6 +534,7 @@ class Utilities() {
     object Customization {
 
 
+        @RequiresApi(Build.VERSION_CODES.M)
         fun customizeText(
             view: View? = null,
             fontSize: Float? = null,
@@ -592,6 +597,7 @@ class Utilities() {
             }
         }
 
+        @RequiresApi(Build.VERSION_CODES.M)
         fun customizeButton(
             context: Context,
             view: Button? = null,
