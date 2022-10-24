@@ -47,7 +47,7 @@ val extentions = Utilities.FileUtility.fileExtension(uri, context)
 
 ```
 
-# Lisence
+# License
 ```
 Copyright 2021 Square, Inc.
 
